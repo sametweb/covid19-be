@@ -1,6 +1,7 @@
 const app = require("express")();
 const cors = require("cors");
 const api = require("./api.js");
+const helmet = require("helmet");
 
 var corsOptions = {
   origin: "https://covid19daily.info",
@@ -8,6 +9,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(helmet());
 
 app.get("/summary", async (req, res) => {
   try {
