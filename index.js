@@ -3,7 +3,7 @@ const cors = require("cors");
 const api = require("./api.js");
 
 var corsOptions = {
-  origin: "http://covid19daily.info",
+  origin: "https://covid19daily.info",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
