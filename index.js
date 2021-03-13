@@ -2,7 +2,12 @@ const app = require("express")();
 const cors = require("cors");
 const api = require("./api.js");
 
-app.use(cors());
+var corsOptions = {
+  origin: "http://covid19daily.info",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 app.get("/summary", async (req, res) => {
   try {
