@@ -13,7 +13,8 @@ app.get("/summary", async (req, res) => {
   try {
     const summary = await api().get("/summary");
     res.status(200).json(summary.data);
-  } catch {
+  } catch (error) {
+    console.log({ error });
     res.status(500).json({ message: "Error fetching summary" });
   }
 });
@@ -32,7 +33,8 @@ app.get("/total/country/:country/status/:status", async (req, res) => {
       `/total/country/${country}/status/${status}`
     );
     res.status(200).json(singleCountry.data);
-  } catch {
+  } catch (error) {
+    console.log({ error });
     res.status(500).json({ message: "Error fetching country details." });
   }
 });
